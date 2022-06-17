@@ -1,0 +1,250 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.text-center {
+  position: relative;
+  margin-top: 15%;
+}
+
+.card-gallery {
+  margin-top: 40px;
+}
+
+.card .done-status {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  right: -15px;
+  top: -15px;
+}
+
+.card {
+  margin-bottom: 35px;
+  width: 21rem;
+  opacity: .7;
+  transition: .5s;
+  filter: grayscale(100%);
+  border-radius: 5%;
+}
+
+.card+.card {
+  margin-left: 30px;
+}
+
+.card:nth-of-type(3n+1) {
+  margin-left: 0px;
+}
+
+.card:hover {
+  opacity: 1;
+  transition: .5s;
+  transform: scale(1.1);
+  filter: grayscale(0);
+}
+
+.card .btn {
+  border-radius: 5%;
+}
+
+.card-gallery .container-fluid .px-lg-5 .row .card-img-top {
+  height: 170px;
+}
+
+.card-gallery .container-fluid .px-lg-5 .row {
+  justify-content: center;
+}
+
+.row .card {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.div-card {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.model-card {
+  user-select: none;
+  display: inline-block;
+  width: 180px;
+  height: 100px;
+  padding-top: 40px;
+  border-radius: 5%;
+  margin-right: 25px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.model-card:first-of-type {
+  border: solid 2px #eb6864;
+  color: #eb6864;
+}
+
+.model-card:nth-of-type(2) {
+  border: solid 2px #02a602;
+  color: #02a602;
+}
+
+.model-card:nth-of-type(3) {
+  color: #6aa2d0;
+  border: solid 2px #6aa2d0;
+  margin-right: 0;
+}
+
+.card-text,
+.card-title {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.card-text {
+  -webkit-line-clamp: 5;
+  word-spacing: -2px;
+  text-align: justify;
+}
+
+.card-gallery .card-title {
+  -webkit-line-clamp: 1;
+  line-height: unset;
+  color: black;
+}
+
+.table-wrapper {
+  overflow-x: scroll;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  white-space: nowrap;
+}
+
+.jumbotron {
+  margin-top: 300px;
+  text-align: center;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+
+@media (max-width: 1399px) {
+
+  .card+.card {
+    margin-left: 30px;
+  }
+
+  .card:nth-of-type(2n+1) {
+    margin-left: 0px;
+  }
+
+}
+
+@media (max-width: 991px) {
+  .card:nth-of-type(2n+1) {
+    margin-left: 0px;
+  }
+
+  .card+.card {
+    margin-left: 0px;
+  }
+
+  .card-gallery .container-fluid .px-lg-5 .row {
+    align-items: center;
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 510px) {
+  .div-card {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .model-card {
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .model-card {
+    width: 140px;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+  /* Vertically center the text there */
+}

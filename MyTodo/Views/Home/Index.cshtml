@@ -1,0 +1,93 @@
+﻿@model IEnumerable<MyTodo.Models.Todo>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to MyTodo</h1>
+    <em>Create, check, and manage your tasks.</em>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="div-card">
+            <div class="model-card" id="buttonPending">
+                <span class="modelTotal">Pending tasks: @Model.Count(x=>x.Done == false)</span>
+            </div>
+            <div class="model-card" id="buttonCompleted">
+                <span class="modelTotal">Completed tasks: @Model.Count(x=>x.Done == true)</span>
+            </div>
+            <div class="model-card" id="buttonAll">
+                <span class="modelTotal">Total tasks: @Model.Count()</span>
+            </div>
+        </div>
+    }
+</div>
+
+<div id="Pending" class="card-gallery">
+    <div class="container-fluid">
+        <div class="px-lg-5">
+            <div class="row">
+                @foreach (var item in Model.Where(x => x.Done == false))
+                {
+                    <div class="card">
+                        <img class="card-img-top" src="~/images/@Url.Content(item.Image?? "Default.png")" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+                            <p class="card-text">@Html.DisplayFor(modelItem => item.Message)</p>
+                            <a class="btn btn-info" asp-controller="Todo" asp-action="Details"
+                            asp-route-id="@item.Id">Details</a>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="Completed" class="card-gallery" style="display: none;">
+    <div class="container-fluid">
+        <div class="px-lg-5">
+            <div class="row">
+                @foreach (var item in Model.Where(x => x.Done == true))
+                {
+                    <div class="card">
+                        <img class="done-status" draggable="false" src="~/images/Checked.jpg" alt="Done status">
+                        <img class="card-img-top" src="~/images/@Url.Content(item.Image?? "Default.png")" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+                            <p class="card-text">@Html.DisplayFor(modelItem => item.Message)</p>
+                            <a class="btn btn-info" asp-controller="Todo" asp-action="Details"
+                            asp-route-id="@item.Id">Details</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="All" class="card-gallery" style="display: none;">
+    <div class="container-fluid">
+        <div class="px-lg-5">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="card">
+                        @if(item.Done == true)
+                        {
+                            <img class="done-status" draggable="false" src="~/images/Checked.jpg" alt="Done status">
+                        }
+                        <img class="card-img-top" src="~/images/@Url.Content(item.Image?? "Default.png")" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+                            <p class="card-text">@Html.DisplayFor(modelItem => item.Message)</p>
+                            <a class="btn btn-info" asp-controller="Todo" asp-action="Details"
+                            asp-route-id="@item.Id">Details</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
